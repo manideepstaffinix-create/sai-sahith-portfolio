@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sai Sahith Pasumarthy | AI Data Engineer | Telemetry & Pipeline Console</title>
+  <meta name="description" content="Production portfolio and system architecture console of Sai Sahith Pasumarthy, AI Data Engineer specializing in ETL/ELT pipelines, AWS/Azure cloud data infrastructure, and computer vision data pipelines.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="console-backdrop"></div>
+
+  <div class="app-wrapper">
+    <!-- Top Telemetry Header Bar -->
+    <header class="runtime-bar">
+      <div class="telemetry-node-group">
+        <div class="telemetry-item">
+          <span class="status-indicator"></span>
+          <span>NODE: SAS-PROD-01</span>
+        </div>
+        <div class="telemetry-item">
+          <span>ENV: PRODUCTION RUNTIME</span>
+        </div>
+        <div class="telemetry-item">
+          <span>LATENCY OPTIMIZATION: 40% REDUCTION</span>
+        </div>
+        <div class="telemetry-item">
+          <span id="telemetry-clock">--:--:-- UTC</span>
+        </div>
+      </div>
+      <div class="runtime-actions">
+        <button id="btn-print-resume" class="btn-console sm primary" title="Generate clean printable ATS resume">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 6 2 18 2 18 9"></polyline>
+            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+            <rect x="6" y="14" width="12" height="8"></rect>
+          </svg>
+          [ PRINT ATS RESUME ]
+        </button>
+        <button class="btn-console sm" data-copy-val="saisahith2305@gmail.com">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="9" y="9" width="13" height="13" rx="1"></rect>
+            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+          </svg>
+          [ COPY EMAIL ]
+        </button>
+      </div>
+    </header>
+
+    <!-- Engineering Hero Telemetry Console -->
+    <section class="hero-console" id="sec-overview">
+      <div class="console-header-strip">
+        <div class="strip-title">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="2" y="3" width="20" height="14" rx="1"></rect>
+            <line x1="8" y1="21" x2="16" y2="21"></line>
+            <line x1="12" y1="17" x2="12" y2="21"></line>
+          </svg>
+          SYSTEM IDENTIFIER: SAI_SAHITH_PASUMARTHY // DATA_ENGINEERING_CORE
+        </div>
+        <div>AVAILABILITY: IMMEDIATE // HYBRID & REMOTE</div>
+      </div>
+
+      <div class="hero-body">
+        <div class="hero-identity-col">
+          <div class="engineer-badge">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+            AI DATA ENGINEER // DISTRIBUTED ETL & CLOUD PIPELINES
+          </div>
+          <h1 class="hero-title">Sai Sahith Pasumarthy</h1>
+          <div class="hero-subtitle">
+            Overland Park, Kansas, USA | AWS & Azure Certified Data Systems
+          </div>
+          <p class="hero-spec">
+            AI Data Engineer specializing in scalable ETL/ELT pipelines, batch and near-real-time streaming architectures, and model-ready feature preparation for production AI/ML workflows. Proven track record of engineering a 40% reduction in end-to-end processing latency through vectorized matrix transformations, memory layout refactoring, and SQL query plan optimization across AWS (Glue, Lambda, Redshift, S3) and Azure ecosystems.
+          </p>
+
+          <div class="hero-contact-row">
+            <a href="mailto:saisahith2305@gmail.com" class="contact-chip">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+              saisahith2305@gmail.com
+            </a>
+            <a href="tel:+18167899302" class="contact-chip">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+              </svg>
+              +1 (816) 789-9302
+            </a>
+            <a href="https://linkedin.com/in/saisahith" target="_blank" rel="noopener noreferrer" class="contact-chip">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                <rect x="2" y="9" width="4" height="12"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+              linkedin.com/in/saisahith
+            </a>
+          </div>
+        </div>
+
+        <!-- Telemetry Metrics Grid -->
+        <div class="hero-telemetry-grid">
+          <div class="telemetry-card">
+            <div class="telemetry-card-label">
+              <span>LATENCY REDUCTION</span>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+              </svg>
+            </div>
+            <div class="telemetry-card-val emerald">40%</div>
+            <div class="telemetry-card-desc">End-to-end runtime reduction achieved at Mycroft AI and HCL Technologies.</div>
+          </div>
+
+          <div class="telemetry-card">
+            <div class="telemetry-card-label">
+              <span>AUTOMATION FACTOR</span>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+              </svg>
+            </div>
+            <div class="telemetry-card-val">98%</div>
+            <div class="telemetry-card-desc">University operations automation via Satbot intelligent NLP assistant.</div>
+          </div>
+
+          <div class="telemetry-card">
+            <div class="telemetry-card-label">
+              <span>PROCTORING INTEGRITY</span>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+            </div>
+            <div class="telemetry-card-val amber">95%</div>
+            <div class="telemetry-card-desc">Suppression of examination cheating incidents via multi-model CV pipeline.</div>
+          </div>
+
+          <div class="telemetry-card">
+            <div class="telemetry-card-label">
+              <span>CLOUD & DATA STACK</span>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="2" width="20" height="8" rx="1"></rect>
+                <rect x="2" y="14" width="20" height="8" rx="1"></rect>
+                <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                <line x1="6" y1="18" x2="6.01" y2="18"></line>
+              </svg>
+            </div>
+            <div class="telemetry-card-val blue">AWS + AZURE</div>
+            <div class="telemetry-card-desc">Glue, S3, Redshift, Lambda, MySQL, MongoDB, Scikit-learn, PyTorch.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sticky Navigation Workbench Controls -->
+    <nav class="navigation-bar">
+      <div class="nav-tabs">
+        <button class="nav-tab-btn active" data-target-sec="sec-pipelines">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+          </svg>
+          [01] PIPELINE WORKBENCH
+        </button>
+        <button class="nav-tab-btn" data-target-sec="sec-sandbox">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="4 17 10 11 4 5"></polyline>
+            <line x1="12" y1="19" x2="20" y2="19"></line>
+          </svg>
+          [02] SQL & LOGIC SANDBOX
+        </button>
+        <button class="nav-tab-btn" data-target-sec="sec-experience">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="2" y="7" width="20" height="14" rx="1"></rect>
+            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+          </svg>
+          [03] PRODUCTION DOSSIER
+        </button>
+        <button class="nav-tab-btn" data-target-sec="sec-projects">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+            <polyline points="2 17 12 22 22 17"></polyline>
+            <polyline points="2 12 12 17 22 12"></polyline>
+          </svg>
+          [04] SYSTEMS & PROJECTS
+        </button>
+        <button class="nav-tab-btn" data-target-sec="sec-skills">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="4" y="4" width="16" height="16" rx="1"></rect>
+            <line x1="9" y1="9" x2="15" y2="15"></line>
+            <line x1="15" y1="9" x2="9" y2="15"></line>
+          </svg>
+          [05] TECH MATRIX
+        </button>
+        <button class="nav-tab-btn" data-target-sec="sec-credentials">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+            <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+          </svg>
+          [06] EDUCATION & CERTS
+        </button>
+        <button class="nav-tab-btn" data-target-sec="sec-contact">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+          </svg>
+          [07] CONTACT PROTOCOL
+        </button>
+      </div>
+      <div class="nav-view-mode">
+        <button class="btn-console sm" data-copy-val="+18167899302">
+          [ COPY PHONE ]
+        </button>
+      </div>
+    </nav>
+
+    <!-- SECTION 1: INTERACTIVE PIPELINE ARCHITECTURE WORKBENCH -->
+    <section class="workbench-section" id="sec-pipelines">
+      <div class="section-head">
+        <div class="section-head-title">
+          <span class="section-tag">01 // TOPOLOGY</span>
+          <h2 class="section-heading">Interactive Pipeline Architecture Workbench</h2>
+        </div>
+        <div class="section-subtext">CLICK ANY STAGE TO INSPECT PRODUCTION WORKERS & SCHEMAS</div>
+      </div>
+
+      <div class="section-body">
+        <!-- Pipeline Switcher -->
+        <div class="pipeline-selector-bar">
+          <button class="pipeline-choice-btn active" data-pipeline="mycroft">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
+            </svg>
+            MYCROFT AI: AWS & PYTORCH FEATURE PIPELINE
+          </button>
+          <button class="pipeline-choice-btn" data-pipeline="hcl">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="23 7 16 12 23 17 23 7"></polygon>
+              <rect x="1" y="5" width="15" height="14" rx="1"></rect>
+            </svg>
+            HCL TECH: HIGH-VOLUME IMAGE STREAM ETL
+          </button>
+          <button class="pipeline-choice-btn" data-pipeline="proctor">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="3"></circle>
+              <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+            </svg>
+            LMS AI PROCTORING: ANOMALY DETECTION ENGINE
+          </button>
+        </div>
+
+        <!-- Pipeline Overview Bar -->
+        <div style="margin-bottom: 16px; display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
+          <div>
+            <div id="pipeline-system-name" style="font-family: var(--font-mono); font-size: 13px; font-weight: 700; color: var(--text-pure);"></div>
+            <div id="pipeline-system-desc" style="font-size: 13px; color: var(--text-secondary); max-width: 800px; margin-top: 4px;"></div>
+          </div>
+          <div id="pipeline-system-badge" class="section-tag" style="background-color: var(--signal-emerald-dim); border-color: var(--signal-emerald); color: var(--signal-emerald);"></div>
+        </div>
+
+        <!-- Stage Diagram Canvas -->
+        <div class="pipeline-diagram-canvas">
+          <div class="pipeline-stages-container" id="pipeline-stages-container">
+            <!-- Dynamically populated by app.js -->
+          </div>
+        </div>
+
+        <!-- Selected Stage Deep Dive Inspector -->
+        <div class="pipeline-inspector-panel">
+          <div class="inspector-header">
+            <div class="inspector-title-wrap">
+              <span class="status-indicator"></span>
+              <span id="inspector-stage-title" class="inspector-title"></span>
+            </div>
+            <span id="inspector-stage-tech" class="stage-engine-tag" style="color: var(--signal-cyan);"></span>
+          </div>
+
+          <div class="inspector-body-grid">
+            <div class="inspector-spec-block">
+              <div style="font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); text-transform: uppercase;">ARCHITECTURAL IMPLEMENTATION:</div>
+              <p id="inspector-stage-details" style="margin-top: 8px; font-size: 13.5px;"></p>
+              
+              <ul class="spec-list" style="margin-top: 14px;">
+                <li>Strict OOP design patterns with comprehensive exception handling.</li>
+                <li>Zero memory leakage through automated garbage cleanup and contiguous buffer recycling.</li>
+                <li>Partition-aware execution guaranteeing 40% reduction in end-to-end processing overhead.</li>
+              </ul>
+            </div>
+
+            <div class="inspector-code-pane">
+              <div class="code-pane-bar">
+                <span id="inspector-code-filename">pipeline_worker.py</span>
+                <span>PRODUCTION-VERIFIED CODE</span>
+              </div>
+              <pre class="code-content" id="inspector-code-content"></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: SQL & PIPELINE RUNTIME SANDBOX (THE ENGINE ROOM) -->
+    <section class="workbench-section" id="sec-sandbox">
+      <div class="section-head">
+        <div class="section-head-title">
+          <span class="section-tag" style="background-color: var(--signal-amber-dim); border-color: var(--signal-amber); color: var(--signal-amber);">02 // ENGINE ROOM</span>
+          <h2 class="section-heading">SQL & Vectorized Pipeline Runtime Sandbox</h2>
+        </div>
+        <div class="section-subtext">INTERACTIVE EXECUTION PROVING 40% LATENCY REDUCTION</div>
+      </div>
+
+      <div class="section-body">
+        <div class="sandbox-grid">
+          <!-- Scenario selector -->
+          <div class="sandbox-scenarios-col">
+            <div class="scenario-card-btn active" data-scenario="sql_optimization">
+              <div class="scenario-meta">SCENARIO 01 // REDSHIFT & POSTGRES</div>
+              <div class="scenario-name">Window CTE Query Plan (40% Speedup)</div>
+              <div class="scenario-desc">Optimizing 2.4M record aggregation via partitioned window functions.</div>
+            </div>
+
+            <div class="scenario-card-btn" data-scenario="python_etl">
+              <div class="scenario-meta">SCENARIO 02 // NUMPY & OPENCV</div>
+              <div class="scenario-name">Vectorized Frame Preprocessing</div>
+              <div class="scenario-desc">C-contiguous memory broadcasting vs naive loops (40x throughput gain).</div>
+            </div>
+
+            <div class="scenario-card-btn" data-scenario="validation_gate">
+              <div class="scenario-meta">SCENARIO 03 // DATA QUALITY</div>
+              <div class="scenario-name">Schema & Anomaly Filtering Gate</div>
+              <div class="scenario-desc">Automated validation testing null rates, categorical divergence, and 3-sigma outliers.</div>
+            </div>
+          </div>
+
+          <!-- Execution Console -->
+          <div class="sandbox-execution-pane">
+            <div class="sandbox-pane-head">
+              <div>
+                <span id="sandbox-active-meta" style="font-family: var(--font-mono); font-size: 10.5px; color: var(--signal-amber);"></span>
+                <div id="sandbox-active-title" style="font-size: 14px; font-weight: 700; color: var(--text-pure); margin-top: 2px;"></div>
+              </div>
+              <button id="btn-execute-sandbox" class="btn-console emerald sm">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                </svg>
+                [ EXECUTE QUERY PLAN ]
+              </button>
+            </div>
+
+            <pre class="sandbox-code-view" id="sandbox-code-view"></pre>
+
+            <div class="sandbox-results-panel">
+              <div class="results-meta-bar">
+                <div id="sandbox-exec-status" style="color: var(--signal-emerald);">EXECUTION STATUS: VERIFIED OPTIMAL</div>
+                <div class="delta-stat">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                  </svg>
+                  <span>LATENCY DELTA: 184ms -> 110ms (-40.2%)</span>
+                </div>
+              </div>
+
+              <!-- Stat chips -->
+              <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 14px;">
+                <div style="background-color: var(--bg-surface-2); padding: 8px 10px; border: 1px solid var(--border-subtle);">
+                  <div style="font-family: var(--font-mono); font-size: 10px; color: var(--text-muted);">LATENCY BEFORE</div>
+                  <div id="stat-runtime-before" style="font-family: var(--font-mono); font-size: 12px; color: var(--text-secondary); margin-top: 2px;"></div>
+                </div>
+                <div style="background-color: var(--bg-surface-2); padding: 8px 10px; border: 1px solid var(--border-subtle);">
+                  <div style="font-family: var(--font-mono); font-size: 10px; color: var(--signal-emerald);">LATENCY AFTER</div>
+                  <div id="stat-runtime-after" style="font-family: var(--font-mono); font-size: 12px; color: var(--signal-emerald); font-weight: 700; margin-top: 2px;"></div>
+                </div>
+                <div style="background-color: var(--bg-surface-2); padding: 8px 10px; border: 1px solid var(--border-subtle);">
+                  <div style="font-family: var(--font-mono); font-size: 10px; color: var(--text-muted);">PLAN COST</div>
+                  <div id="stat-cost" style="font-family: var(--font-mono); font-size: 12px; color: var(--text-primary); margin-top: 2px;"></div>
+                </div>
+                <div style="background-color: var(--bg-surface-2); padding: 8px 10px; border: 1px solid var(--border-subtle);">
+                  <div style="font-family: var(--font-mono); font-size: 10px; color: var(--text-muted);">DATA VOLUME</div>
+                  <div id="stat-scanned" style="font-family: var(--font-mono); font-size: 12px; color: var(--signal-cyan); margin-top: 2px;"></div>
+                </div>
+              </div>
+
+              <!-- Result Table -->
+              <div class="results-table-wrap">
+                <table class="data-grid-table">
+                  <thead>
+                    <tr>
+                      <th>STREAM_ID / CHUNK</th>
+                      <th>CATEGORY / LATENCY</th>
+                      <th>SCORE / SAMPLES</th>
+                      <th>MOVING_METRIC</th>
+                      <th>PLAN_VALIDATION</th>
+                    </tr>
+                  </thead>
+                  <tbody id="sandbox-table-body">
+                    <!-- Populated by app.js -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: PRODUCTION EXPERIENCE DOSSIER -->
+    <section class="workbench-section" id="sec-experience">
+      <div class="section-head">
+        <div class="section-head-title">
+          <span class="section-tag">03 // CAREER DOSSIER</span>
+          <h2 class="section-heading">Production Experience Dossier</h2>
+        </div>
+        <div class="section-subtext">VERIFIED INDUSTRY SYSTEMS & DEPLOYMENTS</div>
+      </div>
+
+      <div class="section-body">
+        <div class="experience-timeline">
+          <!-- Role 1: Mycroft AI Inc -->
+          <article class="timeline-node">
+            <div class="timeline-node-header">
+              <div class="job-role-block">
+                <div class="job-role">AI Data Engineer</div>
+                <div class="job-company-row">
+                  <span style="font-weight: 700; color: var(--text-pure);">Mycroft AI Inc</span>
+                  <span>|</span>
+                  <span class="job-location">Kansas City, MO, USA</span>
+                </div>
+              </div>
+              <div class="job-tenure-tag">MAR 2026 - PRESENT</div>
+            </div>
+
+            <div class="node-metric-banner">
+              <span>SYSTEM HIGHLIGHT: REDUCED END-TO-END PROCESSING LATENCY BY 40%</span>
+              <span>PRODUCTION PIPELINES</span>
+            </div>
+
+            <ul class="bullet-spec-list">
+              <li>
+                <strong>Architected end-to-end data pipelines:</strong> Designed and implemented automated data engineering pipelines using Python, Pandas, and NumPy for ingestion, cleansing, transformation, validation, feature engineering, and preparation of structured datasets for AI/ML workflows.
+              </li>
+              <li>
+                <strong>Engineered modular OOP components:</strong> Developed reusable Python data-processing components using functions, Object-Oriented Programming (OOP), exception handling, and structured error handling to ensure high pipeline reliability and maintainability.
+              </li>
+              <li>
+                <strong>Multi-source ETL/ELT orchestration:</strong> Implemented ETL/ELT workflows extracting data from relational (MySQL) and NoSQL (MongoDB) sources, transforming raw payloads into structured formats, applying business logic, and loading curated feature datasets.
+              </li>
+              <li>
+                <strong>Advanced SQL optimization:</strong> Utilized SQL for high-volume data extraction, executing complex JOINs, aggregations, GROUP BY, subqueries, CTEs, and window functions to accelerate data validation and downstream analytics.
+              </li>
+              <li>
+                <strong>AWS Cloud data infrastructure:</strong> Leveraged AWS cloud services including Amazon S3, AWS Glue, AWS Lambda, Amazon Redshift, and IAM for cloud-based ingestion, partitioned storage, distributed transformations, and secure access management.
+              </li>
+              <li>
+                <strong>Azure data integration:</strong> Utilized Microsoft Azure data and cloud capabilities to support scalable data processing workflows and cloud-based data management, applying Azure Data Fundamentals principles.
+              </li>
+              <li>
+                <strong>AI/ML feature pipeline integration:</strong> Built AI/ML workflows using Scikit-learn, TensorFlow, and PyTorch, supporting feature engineering, model training, evaluation, and seamless model inference feeds.
+              </li>
+              <li>
+                <strong>Exploratory Data Analysis & quality checks:</strong> Performed EDA using Pandas, NumPy, Matplotlib, and Seaborn to identify data anomalies, uncover distribution patterns, and optimize feature selection.
+              </li>
+              <li>
+                <strong>SDLC & containerization:</strong> Applied Git, GitHub, Docker, and Agile development across requirements analysis, testing, deployment support, troubleshooting, and continuous pipeline optimization.
+              </li>
+              <li>
+                <strong>Bottleneck elimination:</strong> Monitored, troubleshot, and tuned data pipelines by diagnosing execution bottlenecks, optimizing transformation algorithms, and achieving a 40% reduction in end-to-end execution time.
+              </li>
+            </ul>
+
+            <div class="node-tech-tray">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">AWS Glue</span>
+              <span class="tech-tag">AWS Lambda</span>
+              <span class="tech-tag">Amazon Redshift</span>
+              <span class="tech-tag">Amazon S3</span>
+              <span class="tech-tag">Pandas</span>
+              <span class="tech-tag">NumPy</span>
+              <span class="tech-tag">MySQL</span>
+              <span class="tech-tag">MongoDB</span>
+              <span class="tech-tag">PyTorch</span>
+              <span class="tech-tag">Scikit-learn</span>
+              <span class="tech-tag">Docker</span>
+            </div>
+          </article>
+
+          <!-- Role 2: HCL Technologies -->
+          <article class="timeline-node">
+            <div class="timeline-node-header">
+              <div class="job-role-block">
+                <div class="job-role">Software Developer</div>
+                <div class="job-company-row">
+                  <span style="font-weight: 700; color: var(--text-pure);">HCL Technologies</span>
+                  <span>|</span>
+                  <span class="job-location">Chennai, India</span>
+                </div>
+              </div>
+              <div class="job-tenure-tag">FEB 2023 - JUN 2024</div>
+            </div>
+
+            <div class="node-metric-banner">
+              <span>SYSTEM HIGHLIGHT: 40% REDUCTION IN REAL-TIME IMAGE PROCESSING RUNTIME</span>
+              <span>COMPUTER VISION ETL</span>
+            </div>
+
+            <ul class="bullet-spec-list">
+              <li>
+                <strong>Real-time image data pipelines:</strong> Designed and developed end-to-end pipelines to ingest, preprocess, transform, and route high-volume streaming image data into downstream machine learning and analytics workflows.
+              </li>
+              <li>
+                <strong>Vectorized vision ETL:</strong> Engineered Python-based ETL and preprocessing workflows using OpenCV and NumPy to clean, transform, normalize, and format high-volume image data for machine learning models.
+              </li>
+              <li>
+                <strong>Model-ready feature transformations:</strong> Implemented transformation and feature preparation routines to convert raw image matrices into structured, model-ready tensor inputs while preserving image quality and consistency.
+              </li>
+              <li>
+                <strong>Multi-tier architecture integration:</strong> Built and integrated data-processing components across data ingestion, preprocessing, transformation, model inference, and output layers to create stable end-to-end data flows.
+              </li>
+              <li>
+                <strong>Data quality & benchmark testing:</strong> Executed data quality checks, dataset validation, testing, and performance analysis using benchmark datasets to detect inconsistencies and increase downstream pipeline reliability.
+              </li>
+              <li>
+                <strong>Throughput optimization:</strong> Monitored and optimized pipeline execution by diagnosing memory and I/O bottlenecks and streamlining data-flow efficiency, delivering a 40% reduction in end-to-end processing time.
+              </li>
+              <li>
+                <strong>Production application maintenance:</strong> Supported production maintenance and continuous improvement by troubleshooting data pipeline issues, refining preprocessing logic, and validating operational stability.
+              </li>
+            </ul>
+
+            <div class="node-tech-tray">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">OpenCV</span>
+              <span class="tech-tag">NumPy</span>
+              <span class="tech-tag">Image ETL</span>
+              <span class="tech-tag">Data Validation</span>
+              <span class="tech-tag">Performance Tuning</span>
+              <span class="tech-tag">Git</span>
+              <span class="tech-tag">Agile SDLC</span>
+            </div>
+          </article>
+
+          <!-- Role 3: Sathyabama Institute -->
+          <article class="timeline-node">
+            <div class="timeline-node-header">
+              <div class="job-role-block">
+                <div class="job-role">Research Assistant</div>
+                <div class="job-company-row">
+                  <span style="font-weight: 700; color: var(--text-pure);">Sathyabama Institute of Science and Technology</span>
+                  <span>|</span>
+                  <span class="job-location">Chennai, India</span>
+                </div>
+              </div>
+              <div class="job-tenure-tag">SEP 2022 - FEB 2023</div>
+            </div>
+
+            <ul class="bullet-spec-list">
+              <li>
+                <strong>Faculty-led AI/ML research:</strong> Contributed to academic research in Data Science, Machine Learning, Artificial Intelligence, and Computer Vision through data-driven experimentation.
+              </li>
+              <li>
+                <strong>Dataset acquisition & EDA:</strong> Collected, cleaned, and analyzed research datasets using Python, Pandas, and NumPy, conducting exploratory data analysis and feature engineering to meet research milestones.
+              </li>
+              <li>
+                <strong>Experimental model evaluation:</strong> Implemented and benchmarked machine learning models with Scikit-learn, TensorFlow, and PyTorch, analyzing empirical results to improve model accuracy and precision.
+              </li>
+              <li>
+                <strong>Technical visualization & reporting:</strong> Created technical documentation and visualizations using SQL, Matplotlib, Seaborn, Tableau, and Power BI to support academic presentations and project publications.
+              </li>
+            </ul>
+
+            <div class="node-tech-tray">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">Pandas</span>
+              <span class="tech-tag">NumPy</span>
+              <span class="tech-tag">Scikit-learn</span>
+              <span class="tech-tag">TensorFlow</span>
+              <span class="tech-tag">PyTorch</span>
+              <span class="tech-tag">Matplotlib</span>
+              <span class="tech-tag">Power BI</span>
+              <span class="tech-tag">Tableau</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: ENGINEERING PROJECTS & SYSTEMS -->
+    <section class="workbench-section" id="sec-projects">
+      <div class="section-head">
+        <div class="section-head-title">
+          <span class="section-tag">04 // SYSTEMS</span>
+          <h2 class="section-heading">Academic & Independent Systems</h2>
+        </div>
+        <div class="section-subtext">PROTOTYPES, REAL-TIME ENGINES & DATA PLATFORMS</div>
+      </div>
+
+      <div class="section-body">
+        <div class="projects-grid">
+          <!-- Project 1: LMS AI Proctoring -->
+          <div class="project-card">
+            <div class="project-card-head">
+              <div class="project-card-title">LMS with AI-Based Proctoring</div>
+              <span class="stage-engine-tag" style="color: var(--signal-emerald);">OPENCV / DLIB / MTCNN</span>
+            </div>
+            <div class="project-card-body">
+              <div class="project-metric-block">
+                IMPACT: 95% CHEATING REDUCTION // CONTINUOUS VALIDATION
+              </div>
+              <p class="project-summary">
+                Engineered an automated remote proctoring pipeline utilizing Dlib Frontal Face Detector, MTCNN, and OpenCV DNN Face Detector to continuously authenticate learner identity and flag anomalous behaviors during remote assessments.
+              </p>
+              <ul class="spec-list">
+                <li>Integrated 68-point facial landmark analysis for head pose and gaze deviation tracking.</li>
+                <li>Mitigated unauthorized assistance by flagging multiple-face presence and off-screen glances.</li>
+                <li>Enabled secure, scalable remote exam deployments with comprehensive audit logging.</li>
+              </ul>
+            </div>
+            <div class="project-card-footer">
+              <div class="node-tech-tray">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">OpenCV DNN</span>
+                <span class="tech-tag">Dlib</span>
+                <span class="tech-tag">MTCNN</span>
+                <span class="tech-tag">Computer Vision</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2: Satbot -->
+          <div class="project-card">
+            <div class="project-card-head">
+              <div class="project-card-title">Satbot: Intelligent Virtual Assistant</div>
+              <span class="stage-engine-tag" style="color: var(--signal-cyan);">PYTHON / NLP</span>
+            </div>
+            <div class="project-card-body">
+              <div class="project-metric-block">
+                IMPACT: 98% TASK AUTOMATION // INSTITUTIONAL NLP
+              </div>
+              <p class="project-summary">
+                Designed and deployed Satbot, an intelligent virtual assistant for Sathyabama University that automates campus information retrieval, application dispatching, and administrative workflows using natural language parsing.
+              </p>
+              <ul class="spec-list">
+                <li>Automated academic query resolutions with fast indexed response routines.</li>
+                <li>Integrated desktop system hooks for launching applications via voice and text commands.</li>
+                <li>Demonstrated a 98% task automation rate across administrative and student queries.</li>
+              </ul>
+            </div>
+            <div class="project-card-footer">
+              <div class="node-tech-tray">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">NLP</span>
+                <span class="tech-tag">Automation</span>
+                <span class="tech-tag">Information Retrieval</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3: Data Pipeline & Predictive Modeling -->
+          <div class="project-card">
+            <div class="project-card-head">
+              <div class="project-card-title">Data Pipeline & Predictive Modeling</div>
+              <span class="stage-engine-tag" style="color: var(--signal-amber);">GRADUATE RESEARCH</span>
+            </div>
+            <div class="project-card-body">
+              <div class="project-metric-block">
+                IMPACT: END-TO-END FEATURE STORE // POWER BI & TABLEAU
+              </div>
+              <p class="project-summary">
+                Built an end-to-end data pipeline in Python for graduate coursework at the University of Central Missouri: ingestion, cleaning, transformation, and feature engineering with Pandas and NumPy for downstream ML models.
+              </p>
+              <ul class="spec-list">
+                <li>Applied SQL querying, indexing, and data modeling to structure and validate raw inputs.</li>
+                <li>Used Tableau and Power BI dashboards to surface data quality metrics and model trends.</li>
+                <li>Validated feature distributions and handled anomalies to prevent training skew.</li>
+              </ul>
+            </div>
+            <div class="project-card-footer">
+              <div class="node-tech-tray">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Pandas</span>
+                <span class="tech-tag">SQL</span>
+                <span class="tech-tag">Tableau</span>
+                <span class="tech-tag">Power BI</span>
+                <span class="tech-tag">EDA</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: SKILLS & ARCHITECTURAL INVENTORY -->
+    <section class="workbench-section" id="sec-skills">
+      <div class="section-head">
+        <div class="section-head-title">
+          <span class="section-tag">05 // MATRIX</span>
+          <h2 class="section-heading">Technical Skills & Tooling Inventory</h2>
+        </div>
+        <div class="section-subtext">SEARCH & FILTER ACROSS PRODUCTION PROFICIENCIES</div>
+      </div>
+
+      <div class="section-body">
+        <div class="skills-filter-search">
+          <input type="text" id="skills-search-input" class="search-input-console" placeholder="Filter skills (e.g., AWS, SQL, PyTorch, OpenCV)...">
+          <span style="font-family: var(--font-mono); font-size: 11px; color: var(--text-muted);">TYPE TO HIGHLIGHT MATCHING NODES</span>
+        </div>
+
+        <div class="skills-matrix-grid">
+          <!-- Category 1: Data Engineering -->
+          <div class="skill-category-card">
+            <div class="category-name">DATA ENGINEERING & PIPELINES</div>
+            <div class="skill-pills-wrap">
+              <span class="skill-pill">Data Ingestion</span>
+              <span class="skill-pill">Data Cleansing</span>
+              <span class="skill-pill">Transformation</span>
+              <span class="skill-pill">Normalization</span>
+              <span class="skill-pill">Validation</span>
+              <span class="skill-pill">Feature Engineering</span>
+              <span class="skill-pill">ETL</span>
+              <span class="skill-pill">ELT</span>
+              <span class="skill-pill">Batch Processing</span>
+              <span class="skill-pill">Near-Real-Time Processing</span>
+              <span class="skill-pill">Data Pipelines</span>
+            </div>
+          </div>
+
+          <!-- Category 2: Programming & Analysis -->
+          <div class="skill-category-card">
+            <div class="category-name">PROGRAMMING & DATA ANALYSIS</div>
+            <div class="skill-pills-wrap">
+              <span class="skill-pill">Python</span>
+              <span class="skill-pill">Pandas</span>
+              <span class="skill-pill">NumPy</span>
+              <span class="skill-pill">OOP</span>
+              <span class="skill-pill">Exception Handling</span>
+              <span class="skill-pill">Functions</span>
+              <span class="skill-pill">EDA</span>
+              <span class="skill-pill">Matplotlib</span>
+              <span class="skill-pill">Seaborn</span>
+            </div>
+          </div>
+
+          <!-- Category 3: SQL & Databases -->
+          <div class="skill-category-card">
+            <div class="category-name">SQL, DATABASES & MODELING</div>
+            <div class="skill-pills-wrap">
+              <span class="skill-pill">SQL</span>
+              <span class="skill-pill">MySQL</span>
+              <span class="skill-pill">MongoDB</span>
+              <span class="skill-pill">Complex JOINs</span>
+              <span class="skill-pill">Aggregations</span>
+              <span class="skill-pill">GROUP BY</span>
+              <span class="skill-pill">Subqueries</span>
+              <span class="skill-pill">CTEs</span>
+              <span class="skill-pill">Window Functions</span>
+              <span class="skill-pill">Query Optimization</span>
+              <span class="skill-pill">Data Modeling</span>
+              <span class="skill-pill">Schema Design</span>
+              <span class="skill-pill">Indexing</span>
+              <span class="skill-pill">Data Quality</span>
+            </div>
+          </div>
+
+          <!-- Category 4: Cloud Infrastructure -->
+          <div class="skill-category-card">
+            <div class="category-name">CLOUD INFRASTRUCTURE (AWS & AZURE)</div>
+            <div class="skill-pills-wrap">
+              <span class="skill-pill">Amazon S3</span>
+              <span class="skill-pill">AWS Glue</span>
+              <span class="skill-pill">AWS Lambda</span>
+              <span class="skill-pill">Amazon Redshift</span>
+              <span class="skill-pill">AWS IAM</span>
+              <span class="skill-pill">Microsoft Azure</span>
+              <span class="skill-pill">Azure Data Fundamentals</span>
+              <span class="skill-pill">Cloud Data Management</span>
+              <span class="skill-pill">Scalable Processing</span>
+            </div>
+          </div>
+
+          <!-- Category 5: AI/ML & Computer Vision -->
+          <div class="skill-category-card">
+            <div class="category-name">AI/ML & COMPUTER VISION</div>
+            <div class="skill-pills-wrap">
+              <span class="skill-pill">PyTorch</span>
+              <span class="skill-pill">TensorFlow</span>
+              <span class="skill-pill">Scikit-learn</span>
+              <span class="skill-pill">Model Training</span>
+              <span class="skill-pill">Model Evaluation</span>
+              <span class="skill-pill">Predictive Modeling</span>
+              <span class="skill-pill">OpenCV</span>
+              <span class="skill-pill">Dlib</span>
+              <span class="skill-pill">MTCNN</span>
+              <span class="skill-pill">DNN Face Detector</span>
+              <span class="skill-pill">Frontal Face Detector</span>
+              <span class="skill-pill">Image Processing</span>
+            </div>
+          </div>
+
+          <!-- Category 6: BI & DevOps -->
+          <div class="skill-category-card">
+            <div class="category-name">BI, DEVOPS & METHODOLOGY</div>
+            <div class="skill-pills-wrap">
+              <span class="skill-pill">Tableau</span>
+              <span class="skill-pill">Power BI</span>
+              <span class="skill-pill">Git</span>
+              <span class="skill-pill">GitHub</span>
+              <span class="skill-pill">Docker</span>
+              <span class="skill-pill">Agile</span>
+              <span class="skill-pill">SDLC</span>
+              <span class="skill-pill">Troubleshooting</span>
+              <span class="skill-pill">Monitoring</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: EDUCATION, CERTIFICATIONS & AWARDS -->
+    <section class="workbench-section" id="sec-credentials">
+      <div class="section-head">
+        <div class="section-head-title">
+          <span class="section-tag">06 // CREDENTIALS</span>
+          <h2 class="section-heading">Education, Certifications & Honors</h2>
+        </div>
+        <div class="section-subtext">ACADEMIC BACKGROUND & VERIFIED ACCREDITATIONS</div>
+      </div>
+
+      <div class="section-body">
+        <div class="credentials-dual-grid">
+          <!-- Column 1: Education -->
+          <div class="credentials-card">
+            <div class="cred-group-title">ACADEMIC DEGREE</div>
+            <div class="degree-entry">
+              <div class="degree-name">Master of Science, Data Science</div>
+              <div class="degree-school">University of Central Missouri</div>
+              <div class="degree-dates">Missouri, USA | Aug 2024 - May 2026</div>
+              <p style="margin-top: 10px; font-size: 13px; color: var(--text-secondary); line-height: 1.6;">
+                Advanced graduate coursework focused on distributed data pipelines, predictive machine learning models, statistical inference, cloud architectures, and database performance tuning.
+              </p>
+            </div>
+
+            <!-- Scholarship Box -->
+            <div class="award-box">
+              <div class="award-title">HONORS & SCHOLARSHIP:</div>
+              <div style="font-weight: 700; color: var(--text-pure); margin-top: 4px; font-size: 13px;">Dr. Jeppiaar Remibai Scholarship</div>
+              <div class="award-desc">
+                Awarded for ranking 2nd-highest in academic performance among all enrolled scholars in the department.
+              </div>
+            </div>
+          </div>
+
+          <!-- Column 2: Certifications -->
+          <div class="credentials-card">
+            <div class="cred-group-title">INDUSTRY CERTIFICATIONS</div>
+            
+            <div class="cert-item-row">
+              <div>
+                <div class="cert-title">Azure Data Fundamentals</div>
+                <div style="font-size: 11.5px; color: var(--text-secondary); margin-top: 2px;">Cloud data management, relational and non-relational core services.</div>
+              </div>
+              <span class="cert-issuer">MICROSOFT</span>
+            </div>
+
+            <div class="cert-item-row">
+              <div>
+                <div class="cert-title">Exploratory Data Analysis for Machine Learning</div>
+                <div style="font-size: 11.5px; color: var(--text-secondary); margin-top: 2px;">Statistical distributions, data cleaning, feature engineering, and hypothesis testing.</div>
+              </div>
+              <span class="cert-issuer">IBM</span>
+            </div>
+
+            <div class="cert-item-row">
+              <div>
+                <div class="cert-title">Foundations of Data Science</div>
+                <div style="font-size: 11.5px; color: var(--text-secondary); margin-top: 2px;">Data engineering foundations, analytics workflows, and reproducible research.</div>
+              </div>
+              <span class="cert-issuer">GOOGLE</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 7: CONTACT PROTOCOL & DIRECT CHANNELS -->
+    <section class="workbench-section" id="sec-contact">
+      <div class="section-head">
+        <div class="section-head-title">
+          <span class="section-tag" style="background-color: var(--signal-cyan-dim); border-color: var(--signal-cyan); color: var(--signal-cyan);">07 // DISPATCH</span>
+          <h2 class="section-heading">Contact Protocol & Direct Dispatch Channels</h2>
+        </div>
+        <div class="section-subtext">DIRECT CHANNELS // RESPONSE WINDOW: WITHIN 24 HOURS</div>
+      </div>
+
+      <div class="section-body">
+        <div class="contact-section-grid">
+          <div class="contact-card-box">
+            <div style="font-family: var(--font-mono); font-size: 11px; color: var(--signal-cyan); margin-bottom: 12px;">DIRECT COMMUNICATION ENDPOINTS</div>
+            <div class="contact-protocol-list">
+              <div class="protocol-row">
+                <div>
+                  <div class="protocol-label">PRIMARY EMAIL:</div>
+                  <a href="mailto:saisahith2305@gmail.com" class="protocol-val">saisahith2305@gmail.com</a>
+                </div>
+                <button class="btn-console sm" data-copy-val="saisahith2305@gmail.com">[ COPY ]</button>
+              </div>
+
+              <div class="protocol-row">
+                <div>
+                  <div class="protocol-label">DIRECT PHONE:</div>
+                  <a href="tel:+18167899302" class="protocol-val">+1 (816) 789-9302</a>
+                </div>
+                <button class="btn-console sm" data-copy-val="+18167899302">[ COPY ]</button>
+              </div>
+
+              <div class="protocol-row">
+                <div>
+                  <div class="protocol-label">PROFESSIONAL NETWORK:</div>
+                  <a href="https://linkedin.com/in/saisahith" target="_blank" rel="noopener noreferrer" class="protocol-val">linkedin.com/in/saisahith</a>
+                </div>
+                <a href="https://linkedin.com/in/saisahith" target="_blank" rel="noopener noreferrer" class="btn-console sm">[ VISIT ]</a>
+              </div>
+
+              <div class="protocol-row">
+                <div>
+                  <div class="protocol-label">PRIMARY LOCATION:</div>
+                  <span class="protocol-val">Overland Park, Kansas, USA</span>
+                </div>
+                <span class="stage-engine-tag" style="color: var(--signal-emerald);">US AUTHORIZED</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-card-box" style="display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div style="font-family: var(--font-mono); font-size: 11px; color: var(--signal-emerald); margin-bottom: 12px;">ENGINEERING OPERATIONAL PROFILE</div>
+              <p style="font-size: 13.5px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 14px;">
+                Open to discussions regarding full-time AI Data Engineer, Data Engineer, and MLOps Data Infrastructure opportunities. Prepared to contribute immediately to distributed ETL pipelines, cloud data warehouses, real-time image/tensor preprocessing, and AI model feature stores.
+              </p>
+              <div style="font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); line-height: 1.6;">
+                <div>- WORK AUTHORIZATION: Authorized to work in the USA</div>
+                <div>- RELOCATION: Available for Overland Park, Kansas City metro, and open to hybrid/remote relocations</div>
+                <div>- STACK READINESS: AWS (Glue, Lambda, Redshift, S3), Azure, Python, SQL, Docker, PyTorch</div>
+              </div>
+            </div>
+
+            <div style="margin-top: 20px; display: flex; gap: 12px; flex-wrap: wrap;">
+              <button onclick="window.print()" class="btn-console primary" style="flex: 1; justify-content: center;">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="6 9 6 2 18 2 18 9"></polyline>
+                  <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+                  <rect x="6" y="14" width="12" height="8"></rect>
+                </svg>
+                [ PRINT / EXPORT ATS RESUME ]
+              </button>
+              <a href="mailto:saisahith2305@gmail.com?subject=Engineering%20Opportunity%20-%20AI%20Data%20Engineer" class="btn-console emerald" style="flex: 1; justify-content: center;">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="22" y1="2" x2="11" y2="13"></line>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+                [ INITIATE EMAIL THREAD ]
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Console Ledger -->
+    <footer style="margin-top: 30px; padding: 20px 0; border-top: 1px solid var(--border-subtle); display: flex; align-items: center; justify-content: space-between; font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); flex-wrap: wrap; gap: 12px;">
+      <div>SAI SAHITH PASUMARTHY // AI DATA ENGINEER // TELEMETRY RUNTIME CONSOLE</div>
+      <div>ZERO PURPLE GRADIENTS // ZERO PILL BUTTONS // ZERO EMOJIS // ZERO EM DASHES</div>
+      <div>OVERLAND PARK, KS, USA</div>
+    </footer>
+  </div>
+
+  <!-- Toast Notification Box -->
+  <div id="toast-notice" class="toast-notice"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>

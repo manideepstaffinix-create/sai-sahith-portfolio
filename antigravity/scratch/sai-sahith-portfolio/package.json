@@ -1,0 +1,21 @@
+{
+  "name": "sai-sahith-portfolio",
+  "version": "1.0.0",
+  "description": "Production AI Data Engineering Portfolio & Telemetry Workbench for Sai Sahith Pasumarthy",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve . -l 3000",
+    "audit": "node audit.js"
+  },
+  "keywords": [
+    "data-engineer",
+    "ai-engineer",
+    "portfolio",
+    "aws",
+    "azure",
+    "pytorch",
+    "opencv"
+  ],
+  "author": "Sai Sahith Pasumarthy",
+  "license": "MIT"
+}

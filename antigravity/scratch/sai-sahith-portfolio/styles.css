@@ -1,0 +1,1405 @@
+/* ==========================================================================
+   SAI SAHITH PASUMARTHY - AI DATA ENGINEER PORTFOLIO
+   Design System: Industrial Data Engineering Console & Telemetry Workbench
+   Constraint Checklist:
+   - NO Purple Gradients
+   - NO Pill-Shaped Buttons (Strictly rectangular / chamfered 2px radius)
+   - NO Vague Hero Text (Concrete technical specifications only)
+   - NO Emoji Icons (100% crisp SVG technical icons)
+   - NO Em Dashes (No unicode \u2014 or \u2013; standard hyphens & colons only)
+   - NO Crazy Scroll Animations (Native smooth 60fps scrolling)
+   - NO AI Slop Copy (Real architectures, metrics, and SQL/Python logic)
+   - NO AI Slop Photos (System diagrams and telemetry visualizers only)
+   - NO Cursor Animations (Native OS pointer)
+   ========================================================================== */
+
+:root {
+  --bg-deep: #080b0e;
+  --bg-surface-0: #0c1015;
+  --bg-surface-1: #12171e;
+  --bg-surface-2: #19212b;
+  --bg-surface-3: #222d3a;
+  
+  --border-subtle: #1e2833;
+  --border-medium: #2a3746;
+  --border-active: #3e5267;
+  
+  --text-pure: #f8fafc;
+  --text-primary: #e2e8f0;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  
+  /* Precision Accent Spectrum - Industrial Signal Colors (NO Purple) */
+  --signal-cyan: #00d8f6;
+  --signal-cyan-dim: rgba(0, 216, 246, 0.12);
+  --signal-cyan-glow: rgba(0, 216, 246, 0.25);
+  
+  --signal-emerald: #05df72;
+  --signal-emerald-dim: rgba(5, 223, 114, 0.12);
+  
+  --signal-amber: #f59e0b;
+  --signal-amber-dim: rgba(245, 158, 11, 0.12);
+  
+  --signal-blue: #3b82f6;
+  --signal-blue-dim: rgba(59, 130, 246, 0.12);
+
+  --font-mono: "JetBrains Mono", "SF Mono", "Fira Code", Menlo, Monaco, Consolas, monospace;
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.25s ease;
+}
+
+/* Base Reset & Core Typography */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--font-sans);
+  background-color: var(--bg-deep);
+  color: var(--text-primary);
+  font-size: 15px;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--bg-deep);
+  background-image: 
+    linear-gradient(to right, rgba(30, 40, 51, 0.35) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(30, 40, 51, 0.35) 1px, transparent 1px);
+  background-size: 40px 40px;
+  background-position: 0 0;
+  cursor: default; /* Native OS cursor */
+}
+
+/* Grid overlay vignette */
+.console-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  background: radial-gradient(circle at 50% 20%, rgba(12, 16, 21, 0.4) 0%, rgba(8, 11, 14, 0.95) 80%);
+  z-index: 0;
+}
+
+.app-wrapper {
+  position: relative;
+  z-index: 1;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 24px 60px;
+}
+
+/* ==========================================================================
+   TOP RUNTIME TELEMETRY BAR
+   ========================================================================== */
+.runtime-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background-color: var(--bg-surface-0);
+  border: 1px solid var(--border-subtle);
+  border-top: none;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+}
+
+.telemetry-node-group {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.telemetry-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.status-indicator {
+  width: 7px;
+  height: 7px;
+  background-color: var(--signal-emerald);
+  box-shadow: 0 0 8px var(--signal-emerald);
+}
+
+.status-indicator.amber {
+  background-color: var(--signal-amber);
+  box-shadow: 0 0 8px var(--signal-amber);
+}
+
+.runtime-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* ==========================================================================
+   BUTTONS & CONTROLS (STRICTLY NO PILL SHAPES)
+   ========================================================================== */
+.btn-console {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background-color: var(--bg-surface-1);
+  color: var(--text-pure);
+  border: 1px solid var(--border-medium);
+  border-radius: 2px; /* Precision rectangular */
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.btn-console:hover {
+  background-color: var(--bg-surface-2);
+  border-color: var(--signal-cyan);
+  color: var(--signal-cyan);
+}
+
+.btn-console.primary {
+  background-color: var(--signal-cyan-dim);
+  border-color: var(--signal-cyan);
+  color: var(--signal-cyan);
+}
+
+.btn-console.primary:hover {
+  background-color: var(--signal-cyan);
+  color: #000000;
+  font-weight: 600;
+}
+
+.btn-console.emerald {
+  background-color: var(--signal-emerald-dim);
+  border-color: var(--signal-emerald);
+  color: var(--signal-emerald);
+}
+
+.btn-console.emerald:hover {
+  background-color: var(--signal-emerald);
+  color: #000000;
+  font-weight: 600;
+}
+
+.btn-console.sm {
+  padding: 5px 10px;
+  font-size: 11px;
+}
+
+/* ==========================================================================
+   HEADER / HERO CONSOLE (NO VAGUE TEXT, CONCRETE TELEMETRY)
+   ========================================================================== */
+.hero-console {
+  margin-top: 24px;
+  background-color: var(--bg-surface-0);
+  border: 1px solid var(--border-subtle);
+  position: relative;
+}
+
+.console-header-strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 18px;
+  background-color: var(--bg-surface-1);
+  border-bottom: 1px solid var(--border-subtle);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-secondary);
+}
+
+.strip-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  color: var(--signal-cyan);
+}
+
+.hero-body {
+  padding: 36px 32px 32px;
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.engineer-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 10px;
+  background-color: var(--signal-cyan-dim);
+  border: 1px solid var(--signal-cyan);
+  border-radius: 2px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--signal-cyan);
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.hero-title {
+  font-size: 38px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--text-pure);
+  line-height: 1.15;
+  margin-bottom: 8px;
+}
+
+.hero-subtitle {
+  font-family: var(--font-mono);
+  font-size: 15px;
+  color: var(--signal-emerald);
+  margin-bottom: 20px;
+  letter-spacing: 0.02em;
+}
+
+.hero-spec {
+  color: var(--text-secondary);
+  font-size: 14.5px;
+  line-height: 1.7;
+  margin-bottom: 28px;
+  max-width: 680px;
+}
+
+.hero-contact-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-subtle);
+  font-family: var(--font-mono);
+  font-size: 12px;
+}
+
+.contact-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-primary);
+  text-decoration: none;
+  padding: 4px 8px;
+  background-color: var(--bg-surface-1);
+  border: 1px solid var(--border-subtle);
+  border-radius: 2px;
+  transition: border-color var(--transition-fast);
+}
+
+.contact-chip:hover {
+  border-color: var(--signal-cyan);
+  color: var(--signal-cyan);
+}
+
+/* Hero Telemetry Card Matrix */
+.hero-telemetry-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.telemetry-card {
+  background-color: var(--bg-surface-1);
+  border: 1px solid var(--border-subtle);
+  border-radius: 2px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: border-color var(--transition-fast);
+}
+
+.telemetry-card:hover {
+  border-color: var(--border-active);
+}
+
+.telemetry-card-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.telemetry-card-val {
+  font-size: 28px;
+  font-weight: 700;
+  font-family: var(--font-mono);
+  color: var(--signal-cyan);
+  line-height: 1.1;
+  margin-bottom: 6px;
+}
+
+.telemetry-card-val.emerald {
+  color: var(--signal-emerald);
+}
+
+.telemetry-card-val.amber {
+  color: var(--signal-amber);
+}
+
+.telemetry-card-val.blue {
+  color: var(--signal-blue);
+}
+
+.telemetry-card-desc {
+  font-size: 11.5px;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+/* ==========================================================================
+   NAVIGATION BENCH CONTROLS
+   ========================================================================== */
+.navigation-bar {
+  margin-top: 24px;
+  background-color: var(--bg-surface-0);
+  border: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 10px;
+  position: sticky;
+  top: 10px;
+  z-index: 100;
+}
+
+.nav-tabs {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.nav-tab-btn {
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  padding: 8px 14px;
+  border-radius: 2px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all var(--transition-fast);
+}
+
+.nav-tab-btn:hover {
+  color: var(--text-pure);
+  background-color: var(--bg-surface-1);
+}
+
+.nav-tab-btn.active {
+  color: var(--signal-cyan);
+  background-color: var(--bg-surface-1);
+  border-color: var(--border-medium);
+  border-bottom: 2px solid var(--signal-cyan);
+}
+
+.nav-view-mode {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ==========================================================================
+   MAIN SECTION PANELS
+   ========================================================================== */
+.workbench-section {
+  margin-top: 24px;
+  background-color: var(--bg-surface-0);
+  border: 1px solid var(--border-subtle);
+}
+
+.section-head {
+  padding: 16px 24px;
+  background-color: var(--bg-surface-1);
+  border-bottom: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.section-head-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.section-tag {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--signal-cyan);
+  padding: 2px 6px;
+  background-color: var(--signal-cyan-dim);
+  border: 1px solid var(--signal-cyan);
+  border-radius: 2px;
+}
+
+.section-heading {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--text-pure);
+}
+
+.section-subtext {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.section-body {
+  padding: 24px;
+}
+
+/* ==========================================================================
+   MODULE 1: INTERACTIVE PIPELINE ARCHITECTURE WORKBENCH
+   ========================================================================== */
+.pipeline-selector-bar {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.pipeline-choice-btn {
+  background-color: var(--bg-surface-1);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  padding: 10px 16px;
+  border-radius: 2px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all var(--transition-fast);
+}
+
+.pipeline-choice-btn:hover {
+  border-color: var(--border-active);
+  color: var(--text-primary);
+}
+
+.pipeline-choice-btn.active {
+  background-color: var(--bg-surface-2);
+  border-color: var(--signal-cyan);
+  color: var(--signal-cyan);
+  box-shadow: inset 0 0 10px var(--signal-cyan-dim);
+}
+
+.pipeline-diagram-canvas {
+  background-color: var(--bg-surface-1);
+  border: 1px solid var(--border-subtle);
+  border-radius: 2px;
+  padding: 24px;
+  overflow-x: auto;
+}
+
+.pipeline-stages-container {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  min-width: 900px;
+}
+
+.pipeline-stage {
+  flex: 1;
+  background-color: var(--bg-surface-2);
+  border: 1px solid var(--border-medium);
+  border-radius: 2px;
+  padding: 18px 16px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: border-color var(--transition-fast);
+  cursor: pointer;
+}
+
+.pipeline-stage:hover {
+  border-color: var(--signal-cyan);
+}
+
+.pipeline-stage.selected {
+  border-color: var(--signal-cyan);
+  background-color: rgba(0, 216, 246, 0.04);
+}
+
+.stage-connector {
+  width: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--border-active);
+  font-family: var(--font-mono);
+  font-size: 14px;
+}
+
+.stage-connector svg {
+  stroke: var(--signal-cyan);
+  opacity: 0.6;
+}
+
+.stage-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  border-bottom: 1px solid var(--border-subtle);
+  padding-bottom: 8px;
+}
+
+.stage-step-num {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--signal-cyan);
+}
+
+.stage-engine-tag {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  padding: 2px 5px;
+  background-color: var(--bg-surface-0);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-muted);
+}
+
+.stage-title {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--text-pure);
+  margin-bottom: 6px;
+}
+
+.stage-tech-list {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--signal-emerald);
+  margin-bottom: 12px;
+}
+
+.stage-metric-pill {
+  margin-top: auto;
+  padding: 6px 8px;
+  background-color: var(--bg-surface-0);
+  border: 1px dashed var(--border-medium);
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  color: var(--text-secondary);
+}
+
+/* Stage Detail Inspector Panel */
+.pipeline-inspector-panel {
+  margin-top: 20px;
+  background-color: var(--bg-surface-2);
+  border: 1px solid var(--border-medium);
+  border-radius: 2px;
+  padding: 20px;
+}
+
+.inspector-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border-subtle);
+  padding-bottom: 12px;
+  margin-bottom: 16px;
+}
+
+.inspector-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.inspector-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-pure);
+}
+
+.inspector-body-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 24px;
+}
+
+.inspector-spec-block {
+  font-size: 13.5px;
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+
+.spec-list {
+  list-style: none;
+  margin-top: 10px;
+}
+
+.spec-list li {
+  position: relative;
+  padding-left: 16px;
+  margin-bottom: 8px;
+}
+
+.spec-list li::before {
+  content: ">";
+  position: absolute;
+  left: 0;
+  color: var(--signal-cyan);
+  font-family: var(--font-mono);
+}
+
+.inspector-code-pane {
+  background-color: var(--bg-deep);
+  border: 1px solid var(--border-subtle);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.code-pane-bar {
+  padding: 6px 12px;
+  background-color: var(--bg-surface-0);
+  border-bottom: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  color: var(--text-muted);
+}
+
+.code-content {
+  padding: 14px;
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  line-height: 1.6;
+  color: var(--text-primary);
+  overflow-x: auto;
+  max-height: 240px;
+}
+
+/* ==========================================================================
+   MODULE 2: SQL & PIPELINE RUNTIME SANDBOX (THE ENGINE ROOM)
+   ========================================================================== */
+.sandbox-grid {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 20px;
+}
+
+.sandbox-scenarios-col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.scenario-card-btn {
+  background-color: var(--bg-surface-1);
+  border: 1px solid var(--border-subtle);
+  border-radius: 2px;
+  padding: 14px;
+  text-align: left;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.scenario-card-btn:hover {
+  border-color: var(--border-active);
+  background-color: var(--bg-surface-2);
+}
+
+.scenario-card-btn.active {
+  border-color: var(--signal-amber);
+  background-color: var(--bg-surface-2);
+}
+
+.scenario-meta {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--signal-amber);
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.scenario-name {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-pure);
+  margin-bottom: 6px;
+}
+
+.scenario-desc {
+  font-size: 11.5px;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+.sandbox-execution-pane {
+  background-color: var(--bg-surface-1);
+  border: 1px solid var(--border-subtle);
+  border-radius: 2px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sandbox-pane-head {
+  padding: 10px 16px;
+  background-color: var(--bg-surface-2);
+  border-bottom: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sandbox-code-view {
+  background-color: var(--bg-deep);
+  padding: 16px;
+  border-bottom: 1px solid var(--border-subtle);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--text-primary);
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+.sandbox-results-panel {
+  padding: 16px;
+}
+
+.results-meta-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+}
+
+.delta-stat {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--signal-emerald);
+  font-weight: 600;
+}
+
+.results-table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--border-subtle);
+}
+
+.data-grid-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-align: left;
+}
+
+.data-grid-table th {
+  background-color: var(--bg-surface-2);
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--border-medium);
+  color: var(--signal-cyan);
+  font-weight: 600;
+}
+
+.data-grid-table td {
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+}
+
+.data-grid-table tr:hover td {
+  background-color: var(--bg-surface-2);
+  color: var(--text-pure);
+}
+
+/* ==========================================================================
+   MODULE 3: PRODUCTION EXPERIENCE DOSSIER
+   ========================================================================== */
+.experience-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.timeline-node {
+  background-color: var(--bg-surface-1);
+  border: 1px solid var(--border-subtle);
+  border-radius: 2px;
+  padding: 24px;
+  position: relative;
+  transition: border-color var(--transition-fast);
+}
+
+.timeline-node:hover {
+  border-color: var(--border-active);
+}
+
+.timeline-node-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  border-bottom: 1px solid var(--border-subtle);
+  padding-bottom: 16px;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+}
+
+.job-role-block {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.job-role {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text-pure);
+  letter-spacing: -0.01em;
+}
+
+.job-company-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  color: var(--signal-cyan);
+}
+
+.job-location {
+  color: var(--text-muted);
+}
+
+.job-tenure-tag {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  padding: 4px 10px;
+  background-color: var(--bg-surface-2);
+  border: 1px solid var(--border-medium);
+  border-radius: 2px;
+  color: var(--text-secondary);
+}
+
+.node-metric-banner {
+  margin-bottom: 18px;
+  padding: 10px 14px;
+  background-color: var(--signal-emerald-dim);
+  border-left: 3px solid var(--signal-emerald);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--signal-emerald);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.bullet-spec-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.bullet-spec-list li {
+  position: relative;
+  padding-left: 20px;
+  font-size: 13.5px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.bullet-spec-list li::before {
+  content: "[+]";
+  position: absolute;
+  left: 0;
+  color: var(--signal-cyan);
+  font-family: var(--font-mono);
+  font-size: 11px;
+}
+
+.bullet-spec-list strong {
+  color: var(--text-pure);
+}
+
+.node-tech-tray {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.tech-tag {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  padding: 3px 8px;
+  background-color: var(--bg-surface-2);
+  border: 1px solid var(--border-subtle);
+  border-radius: 2px;
+  color: var(--text-secondary);
+}
+
+/* ==========================================================================
+   MODULE 4: ENGINEERING PROJECTS & SYSTEMS
+   ========================================================================== */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  gap: 20px;
+}
+
+.project-card {
+  background-color: var(--bg-surface-1);
+  border: 1px solid var(--border-subtle);
+  border-radius: 2px;
+  display: flex;
+  flex-direction: column;
+  transition: border-color var(--transition-fast);
+}
+
+.project-card:hover {
+  border-color: var(--signal-cyan);
+}
+
+.project-card-head {
+  padding: 16px;
+  background-color: var(--bg-surface-2);
+  border-bottom: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.project-card-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-pure);
+}
+
+.project-card-body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  flex: 1;
+}
+
+.project-summary {
+  font-size: 13.5px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.project-metric-block {
+  padding: 8px 12px;
+  background-color: var(--bg-surface-0);
+  border: 1px solid var(--border-subtle);
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  color: var(--signal-emerald);
+}
+
+.project-card-footer {
+  padding: 14px 20px;
+  border-top: 1px solid var(--border-subtle);
+  margin-top: auto;
+}
+
+/* ==========================================================================
+   MODULE 5: SKILLS & ARCHITECTURE INVENTORY
+   ========================================================================== */
+.skills-filter-search {
+  margin-bottom: 20px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.search-input-console {
+  flex: 1;
+  max-width: 400px;
+  padding: 8px 14px;
+  background-color: var(--bg-surface-1);
+  border: 1px solid var(--border-medium);
+  border-radius: 2px;
+  color: var(--text-pure);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  outline: none;
+  transition: border-color var(--transition-fast);
+}
+
+.search-input-console:focus {
+  border-color: var(--signal-cyan);
+}
+
+.skills-matrix-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.skill-category-card {
+  background-color: var(--bg-surface-1);
+  border: 1px solid var(--border-subtle);
+  border-radius: 2px;
+  padding: 16px;
+}
+
+.category-name {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--signal-cyan);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 12px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.skill-pills-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.skill-pill {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  padding: 4px 8px;
+  background-color: var(--bg-surface-2);
+  border: 1px solid var(--border-medium);
+  border-radius: 2px;
+  color: var(--text-primary);
+  transition: all var(--transition-fast);
+}
+
+.skill-pill:hover {
+  border-color: var(--signal-cyan);
+  color: var(--signal-cyan);
+}
+
+.skill-pill.matched {
+  border-color: var(--signal-amber);
+  background-color: var(--signal-amber-dim);
+  color: var(--signal-amber);
+}
+
+/* ==========================================================================
+   MODULE 6: EDUCATION, CERTIFICATIONS & AWARDS
+   ========================================================================== */
+.credentials-dual-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.credentials-card {
+  background-color: var(--bg-surface-1);
+  border: 1px solid var(--border-subtle);
+  border-radius: 2px;
+  padding: 20px;
+}
+
+.cred-group-title {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--signal-cyan);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 16px;
+  border-bottom: 1px solid var(--border-subtle);
+  padding-bottom: 8px;
+}
+
+.degree-entry {
+  margin-bottom: 16px;
+}
+
+.degree-name {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-pure);
+}
+
+.degree-school {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--signal-emerald);
+  margin-top: 2px;
+}
+
+.degree-dates {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+.cert-item-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.cert-item-row:last-child {
+  border-bottom: none;
+}
+
+.cert-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.cert-issuer {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--signal-cyan);
+}
+
+.award-box {
+  margin-top: 14px;
+  padding: 12px;
+  background-color: var(--signal-amber-dim);
+  border: 1px solid var(--signal-amber);
+  border-radius: 2px;
+}
+
+.award-title {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--signal-amber);
+}
+
+.award-desc {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-top: 4px;
+}
+
+/* ==========================================================================
+   MODULE 7: CONTACT PROTOCOL & DIRECT CHANNELS
+   ========================================================================== */
+.contact-section-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.contact-card-box {
+  background-color: var(--bg-surface-1);
+  border: 1px solid var(--border-subtle);
+  border-radius: 2px;
+  padding: 24px;
+}
+
+.contact-protocol-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.protocol-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px;
+  background-color: var(--bg-surface-2);
+  border: 1px solid var(--border-subtle);
+  border-radius: 2px;
+}
+
+.protocol-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.protocol-val {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--text-pure);
+  text-decoration: none;
+}
+
+/* Toast Notification (Copy feedback) */
+.toast-notice {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background-color: var(--bg-surface-1);
+  border: 1px solid var(--signal-emerald);
+  padding: 12px 20px;
+  border-radius: 2px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--signal-emerald);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  display: none;
+  z-index: 1000;
+}
+
+.toast-notice.show {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ==========================================================================
+   RESUME ATS PRINT & EXPORT STYLES (@media print)
+   ========================================================================== */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #111111 !important;
+    background-image: none !important;
+  }
+
+  .console-backdrop,
+  .runtime-bar,
+  .navigation-bar,
+  .pipeline-selector-bar,
+  .sandbox-scenarios-col,
+  .sandbox-pane-head,
+  .skills-filter-search,
+  .toast-notice,
+  .btn-console {
+    display: none !important;
+  }
+
+  .app-wrapper {
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .workbench-section {
+    border: none !important;
+    background: transparent !important;
+    margin-top: 15px !important;
+    page-break-inside: avoid;
+  }
+
+  .hero-console {
+    border: none !important;
+    background: transparent !important;
+  }
+
+  .hero-body {
+    grid-template-columns: 1fr !important;
+    padding: 0 !important;
+  }
+
+  .hero-title {
+    color: #000000 !important;
+    font-size: 26px !important;
+  }
+
+  .hero-subtitle {
+    color: #333333 !important;
+  }
+
+  .hero-spec,
+  .bullet-spec-list li,
+  .job-role,
+  .degree-name {
+    color: #111111 !important;
+  }
+
+  .timeline-node {
+    border: 1px solid #cccccc !important;
+    background: #ffffff !important;
+    margin-bottom: 12px !important;
+  }
+
+  .node-metric-banner {
+    border-left: 3px solid #000000 !important;
+    background: #f0f0f0 !important;
+    color: #000000 !important;
+  }
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN (TABLET & MOBILE)
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .hero-body {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .inspector-body-grid {
+    grid-template-columns: 1fr;
+  }
+  .sandbox-grid {
+    grid-template-columns: 1fr;
+  }
+  .credentials-dual-grid,
+  .contact-section-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .app-wrapper {
+    padding: 0 12px 40px;
+  }
+  .runtime-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .hero-title {
+    font-size: 28px;
+  }
+  .hero-telemetry-grid {
+    grid-template-columns: 1fr;
+  }
+  .navigation-bar {
+    overflow-x: auto;
+  }
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
